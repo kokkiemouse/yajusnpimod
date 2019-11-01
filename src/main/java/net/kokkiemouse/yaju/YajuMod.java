@@ -1,8 +1,12 @@
-package net.fabricmc.example;
+package net.kokkiemouse.yaju;
 
 import net.fabricmc.api.ModInitializer;
-
-public class ExampleMod implements ModInitializer {
+import net.fabricmc.api.ModInitializer;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.Item;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
+public class YajuMod implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
