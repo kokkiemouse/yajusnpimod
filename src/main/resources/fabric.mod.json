@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
-  "version": "${version}",
+  "id": "yajumod",
+  "version": "yaju100pi",
 
   "name": "Example Mod",
   "description": "This is an example description! Tell everyone what your mod is about!",
@@ -14,12 +14,12 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/yajumod/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "net.kokkiemouse.yaju.YajuMod"
     ]
   },
   "mixins": [
