@@ -1,5 +1,5 @@
 package net.kokkiemouse.yaju.mixin;
-
+/*
 import net.minecraft.client.MinecraftClient;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -13,3 +13,4 @@ public class ExampleMixin {
 		System.out.println("This line is printed by an example mod mixin!");
 	}
 }
+*/

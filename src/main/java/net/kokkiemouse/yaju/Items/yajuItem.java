@@ -17,7 +17,7 @@ public class yajuItem extends Item {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand){
 
-        playerEntity.playSound(SoundEvents.BLOCK_WOOL_BREAK, 1.0F, 1.0F);
+        playerEntity.playSound(SoundEvents.ENTITY_ZOMBIE_AMBIENT, 1.0F, 1.0F);
         return new TypedActionResult<ItemStack>(ActionResult.SUCCESS, playerEntity.getStackInHand(hand));
         // 右クリックすると羊毛を壊した時の音がなる
     }

@@ -22,9 +22,6 @@
       "net.kokkiemouse.yaju.YajuMod"
     ]
   },
-  "mixins": [
-    "modid.mixins.json"
-  ],
 
   "depends": {
     "fabricloader": ">=0.4.0",
