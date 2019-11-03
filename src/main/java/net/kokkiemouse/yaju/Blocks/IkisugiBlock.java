@@ -132,12 +132,12 @@ public class IkisugiBlock extends FacingBlock implements Scheduleable {
                     .scheduleId(114)
                     .pos(blockPos_1)
                     .additionalData(scheduleData)
-                    .repeat(7,10);
+                    .repeat(5,13);
             cancellationToken2=Scheduler.Builder(this, world_1)
                     .scheduleId(TICKUPDATE_BOMB)
                     .pos(blockPos_1)
                     .additionalData(scheduleData)
-                    .schedule(75);
+                    .schedule(73);
 
 
         }
@@ -172,10 +172,14 @@ public class IkisugiBlock extends FacingBlock implements Scheduleable {
                 System.out.println("X amount of ticks have passed!");
                 //world.setBlockState(blockPos, Blocks.AIR.getDefaultState(), 11);
                 world.playSound((PlayerEntity)null, blockPos.getX(),blockPos.getY(),blockPos.getZ(), YajuMod.NAA_TSOUND_EVENT, SoundCategory.BLOCKS, 1f, 1f);
-                world.createExplosion(null,blockPos.getX() + 0.5D,blockPos.getY() + 0.5D,blockPos.getZ() + 0.5D,4.0F, Explosion.DestructionType.BREAK);
+                //world.playSound(player, blockPos, SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.BLOCKS, 1f, 1f);
+
+                //world.createExplosion(null,blockPos.getX() + 0.5D,blockPos.getY() + 0.5D,blockPos.getZ() + 0.5D,4.0F, Explosion.DestructionType.BREAK);
+
                 break;
             case 114:
                 BlockState blockState=world.getBlockState(blockPos);
+                if(blockState.getBlock() != this) break;
                 world.setBlockState(blockPos, (BlockState) blockState.cycle(MODE), 3);
                 break;
         }
@@ -186,9 +190,9 @@ public class IkisugiBlock extends FacingBlock implements Scheduleable {
 
     private void primeTnt(World world_1, BlockPos blockPos_1, @Nullable LivingEntity livingEntity_1) {
         if (!world_1.isClient) {
-            //tntEntity_1 = new IkisugiEntity(world_1, (double)((float)blockPos_1.getX() + 0.5F), (double)blockPos_1.getY(), (double)((float)blockPos_1.getZ() + 0.5F), livingEntity_1);
+            tntEntity_1 = new IkisugiEntity(world_1, (double)((float)blockPos_1.getX() + 0.5F), (double)blockPos_1.getY(), (double)((float)blockPos_1.getZ() + 0.5F), livingEntity_1);
 
-            //world_1.spawnEntity(tntEntity_1);
+            world_1.spawnEntity(tntEntity_1);
             world_1.playSound((PlayerEntity)null, tntEntity_1.getX(), tntEntity_1.getY(), tntEntity_1.getZ(), YajuMod.IKISUGINAAA_SOUND_EVENT, SoundCategory.BLOCKS, 1.0F, 1.0F);
         }
     }
