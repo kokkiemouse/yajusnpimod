@@ -1,0 +1,69 @@
+
+
+{
+  "yaju.ikisugi":{
+    "category":"block",
+    "sounds":[
+      {
+        "name": "yajumod:ikisugi1",
+        "stream":false
+      }
+    ]
+  },
+  "yaju.ikisugiblock":{
+  "category":"block",
+  "sounds":[
+    {
+      "name": "yajumod:ikisugi1",
+      "stream":false,
+      "pitch": 1.25
+    }
+  ]
+  },
+    "yaju.naabreak": {
+      "category": "block",
+      "sounds": [
+        {
+          "name": "yajumod:naa",
+          "stream": false,
+          "pitch": 1.25
+        }
+      ]
+   },
+  "yaju.naa": {
+  "category": "block",
+  "sounds": [
+    {
+      "name": "yajumod:naa",
+      "stream": false,
+      "pitch": 1
+    }
+  ]
+},
+
+  "yaju.ikisuginaa": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "yajumod:ikisuginaa",
+        "stream": false,
+        "pitch": 1
+      }
+    ]
+  },
+  "yaju.observer": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "yajumod:naa",
+        "stream": false,
+        "pitch": 1
+      },
+      {
+        "name": "yajumod:ikisugi1",
+        "stream":false,
+        "pitch": 1
+      }
+    ]
+  }
+}

@@ -1,6 +1,14 @@
 {
   "variants": {
-    "": { "model": "yajumod:block/ikkisugi" }
+    "mode=0,facing=north": { "model": "yajumod:block/aa" },
+    "mode=1,facing=north": { "model": "yajumod:block/ikkisugi" },
+    "mode=0,facing=south": { "model": "yajumod:block/aa", "y": 180 },
+    "mode=1,facing=south": { "model": "yajumod:block/ikkisugi", "y": 180 },
+    "mode=0,facing=west": { "model": "yajumod:block/aa", "y": 270 },
+    "mode=1,facing=west": { "model": "yajumod:block/ikkisugi", "y": 270 },
+    "mode=0,facing=east": { "model": "yajumod:block/aa", "y": 90},
+    "mode=1,facing=east": { "model": "yajumod:block/ikkisugi","y": 90}
+
   }
 }
 

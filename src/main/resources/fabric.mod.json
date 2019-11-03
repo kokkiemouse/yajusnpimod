@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "net.kokkiemouse.yaju.YajuMod"
+    ],
+    "client": [
+      "net.kokkiemouse.yaju.YajuModClient"
     ]
   },
 
