@@ -41,7 +41,7 @@ public class IkisugiEntity extends Entity {
 
     public IkisugiEntity(EntityType<Entity> entityType_1, World world_1) {
         super(entityType_1, world_1);
-        this.fuseTimer = 75;
+        this.fuseTimer = 73;
         this.block = YajuMod.FABRIC_IKISUGI.getDefaultState();
         this.inanimate = true;
         this.setNoGravity(true);
@@ -61,12 +61,13 @@ public class IkisugiEntity extends Entity {
         this.setPosition(double_1, double_2, double_3);
         double double_4 = world_1.random.nextDouble() * 6.2831854820251465D;
         this.setVelocity(-Math.sin(double_4) * 0.02D, 0.20000000298023224D, -Math.cos(double_4) * 0.02D);
-        this.setFuse(75);
+        this.setFuse(73);
         this.prevX = double_1;
         this.prevY = double_2;
         this.prevZ = double_3;
         this.causingEntity = livingEntity_1;
         this.setNoGravity(true);
+
     }
 
 

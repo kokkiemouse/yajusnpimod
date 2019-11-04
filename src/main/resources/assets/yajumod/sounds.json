@@ -39,6 +39,15 @@
       "pitch": 1
     }
   ]
+},"yaju.unko": {
+  "category": "block",
+  "sounds": [
+    {
+      "name": "yajumod:unko",
+      "stream": false,
+      "pitch": 1
+    }
+  ]
 },
 
   "yaju.ikisuginaa": {

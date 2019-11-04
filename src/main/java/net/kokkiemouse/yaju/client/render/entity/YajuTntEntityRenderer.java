@@ -79,4 +79,5 @@ public void render(IkisugiEntity entity, double x, double y, double z, float yaw
 
         return SpriteAtlasTexture.BLOCK_ATLAS_TEX;
     }
+
 }

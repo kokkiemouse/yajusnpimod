@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    "WWW",
+    "WWW"
+  ],
+  "key": {
+    "W": {
+      "item": "yajumod:unko"
+    }
+  },
+  "result": {
+    "item": "yajumod:ikkisugi",
+    "count": 4
+  }
+}
+
