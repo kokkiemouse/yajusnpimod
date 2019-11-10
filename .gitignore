@@ -1,10 +1,14 @@
 # gradle
 
 .gradle/
-build/
+build/classes
+build/libs
+build/generated
+build/loom-cache
+build/resources
+build/tmp
 out/
 classes/
-!build/docs
 # idea
 
 .idea/
