@@ -1,27 +1,20 @@
 package net.kokkiemouse.yaju.Blocks;
-import com.google.common.util.concurrent.AbstractScheduledService;
-import javafx.beans.property.StringProperty;
-import net.kokkiemouse.yaju.YajuMod;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.kokkiemouse.yaju.init.YajuMod;
 import net.kokkiemouse.yaju.entities.IkisugiEntity;
 import net.minecraft.block.*;
-import net.minecraft.block.enums.Instrument;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.TntEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.IntProperty;
-import net.minecraft.state.property.Property;
-import net.minecraft.text.LiteralText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.BlockMirror;
 import net.minecraft.util.BlockRotation;
@@ -29,7 +22,6 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
 import scheduler.CancellationToken;
@@ -37,8 +29,6 @@ import scheduler.Scheduleable;
 import scheduler.Scheduler;
 
 import javax.annotation.Nullable;
-import javax.naming.spi.StateFactory;
-import java.util.Random;
 
 public class IkisugiBlock extends FacingBlock implements Scheduleable {
     public static final int TICKUPDATE_BOMB=810;
@@ -53,9 +43,13 @@ public class IkisugiBlock extends FacingBlock implements Scheduleable {
         this.setDefaultState((BlockState)this.stateFactory.getDefaultState().with(FACING, Direction.NORTH));
         this.setDefaultState((BlockState)this.stateFactory.getDefaultState().with(POWERED, false));
         this.setDefaultState((BlockState)this.stateFactory.getDefaultState().with(MODE, 1));
+
         System.out.println("Ikisugi Block Call");
     }
-
+    @Environment(EnvType.CLIENT)
+    public boolean isSideInvisible(BlockState blockState_1, BlockState blockState_2, Direction direction_1) {
+        return blockState_2.getBlock() == this ? true : super.isSideInvisible(blockState_1, blockState_2, direction_1);
+    }
 
     @Override
     public void appendProperties(StateManager.Builder<Block, BlockState> stateManager$Builder_1) {
@@ -87,6 +81,7 @@ public class IkisugiBlock extends FacingBlock implements Scheduleable {
 
         ItemStack itemStack_1 = playerEntity_1.getStackInHand(hand_1);
         Item item_1 = itemStack_1.getItem();
+        if(item_1==YajuMod.FABRIC_IKISUGI_ITEM) return ActionResult.PASS;
         if (item_1 != Items.FLINT_AND_STEEL && item_1 != Items.FIRE_CHARGE) {
 
             if (!playerEntity_1.abilities.allowModifyWorld) {

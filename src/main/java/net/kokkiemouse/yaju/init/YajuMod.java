@@ -1,4 +1,4 @@
-package net.kokkiemouse.yaju;
+package net.kokkiemouse.yaju.init;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
@@ -29,6 +29,12 @@ import java.util.logging.Level;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
+/**
+ * Modの初期化(server)
+ @author kokkiemouse
+ @version 8.1.0
+ @since 810
+ */
 public class YajuMod implements ModInitializer {
     public static final EntityType<Entity> ikisugiTnt =    Registry.register(
 			Registry.ENTITY_TYPE, new Identifier("yajumod","yajutnt"),
@@ -52,8 +58,11 @@ public class YajuMod implements ModInitializer {
 
 	public static BlockSoundGroup Ikisugi_SOUNDGROUP=new BlockSoundGroup(1.0F,1.0F,NAA_SOUND_EVENT,IKISUGI_SOUND_EVENT,IKISUGI_SOUND_EVENT_BLOCK,IKISUGI_SOUND_EVENT,IKISUGI_SOUND_EVENT);
 	public static Block FABRIC_IKISUGI = new IkisugiBlock(FabricBlockSettings.of(Material.METAL).sounds(Ikisugi_SOUNDGROUP).build());
-	public static Block OMARUANIKI=new OmaruBlock(FabricBlockSettings.of(Material.METAL).sounds(BlockSoundGroup.ANVIL).build());
+	public static Block OMARUANIKI=new OmaruBlock(FabricBlockSettings.of(Material.CLAY).sounds(BlockSoundGroup.ANVIL).build());
 	public static Logger MyLogger=		LogManager.getLogManager().getLogger("YajuMod");
+	public static Item IKISUGI_ITEM=new BlockItem(OMARUANIKI,new Item.Settings().group(ItemGroup.MISC));
+	public static Item FABRIC_IKISUGI_ITEM=new BlockItem(FABRIC_IKISUGI,new Item.Settings().group(ItemGroup.MISC));
+
 	@Override
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
@@ -71,9 +80,9 @@ public class YajuMod implements ModInitializer {
 		Registry.register(Registry.SOUND_EVENT,UNKO_SOUND_ID,UNKO_SOUND_EVENT);
 		Registry.register(Registry.ITEM, new Identifier("yajumod","ikuiku"), FABRIC_ITEM);
 		Registry.register(Registry.BLOCK,new Identifier("yajumod","ikkisugi"),FABRIC_IKISUGI);
-		Registry.register(Registry.ITEM,new Identifier("yajumod","ikkisugi"),new BlockItem(FABRIC_IKISUGI,new Item.Settings().group(ItemGroup.MISC)));
+		Registry.register(Registry.ITEM,new Identifier("yajumod","ikkisugi"),FABRIC_IKISUGI_ITEM);
 		Registry.register(Registry.ITEM,new Identifier("yajumod","unko"),UNKO_ITEM);
 		Registry.register(Registry.BLOCK,new Identifier("yajumod","omaru"),OMARUANIKI);
-		Registry.register(Registry.ITEM,new Identifier("yajumod","omaru"),new BlockItem(OMARUANIKI,new Item.Settings().group(ItemGroup.MISC)));
+		Registry.register(Registry.ITEM,new Identifier("yajumod","omaru"),IKISUGI_ITEM);
 	}
 }

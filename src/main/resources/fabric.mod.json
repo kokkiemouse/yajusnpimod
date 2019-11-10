@@ -19,10 +19,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.kokkiemouse.yaju.YajuMod"
+      "net.kokkiemouse.yaju.init.YajuMod"
     ],
     "client": [
-      "net.kokkiemouse.yaju.YajuModClient"
+      "net.kokkiemouse.yaju.init.YajuModClient"
     ]
   },
 

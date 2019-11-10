@@ -1,7 +1,11 @@
 package net.kokkiemouse.yaju.Blocks;
 
-import net.kokkiemouse.yaju.YajuMod;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.kokkiemouse.yaju.init.YajuMod;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockRenderType;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.sound.SoundCategory;
@@ -9,6 +13,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class OmaruBlock extends Block {
+
+    @Environment(EnvType.CLIENT)
+    public BlockRenderType getRenderType(BlockState blockState_1) {
+        return BlockRenderType.MODEL;
+    }
+
 
     public OmaruBlock(Settings block$Settings_1) {
         super(block$Settings_1);

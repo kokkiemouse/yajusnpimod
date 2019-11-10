@@ -4,10 +4,8 @@ import javax.annotation.Nullable;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.impl.entity.FabricEntityType;
-import net.kokkiemouse.yaju.YajuMod;
+import net.kokkiemouse.yaju.init.YajuMod;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.client.network.packet.EntitySpawnS2CPacket;
 import net.minecraft.entity.*;
 import net.minecraft.entity.data.DataTracker;
