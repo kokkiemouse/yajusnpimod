@@ -36,6 +36,9 @@ import java.util.logging.Logger;
  @since 810
  */
 public class YajuMod implements ModInitializer {
+	/**
+	 *イキスギTNTの変数
+	 */
     public static final EntityType<Entity> ikisugiTnt =    Registry.register(
 			Registry.ENTITY_TYPE, new Identifier("yajumod","yajutnt"),
             FabricEntityTypeBuilder.create(EntityCategory.MISC,IkisugiEntity::new).size(EntityDimensions.changing(0.98F,0.98F)).build());

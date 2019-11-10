@@ -8,11 +8,26 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-public class UnkoItem extends Item {
 
+/**
+ *うんちの実装
+ */
+public class UnkoItem extends Item {
+    /**
+     *うんこのコンストラクタ
+     * @param group 設定じゃない?
+     */
     public UnkoItem(Settings group) {
         super(group);
     }
+
+    /**
+     *うんこ💛を右クリックした時に呼ばれる奴
+     * @param world プレイ💛中のワールド
+     * @param playerEntity 右クリックしたプレーヤー
+     * @param hand 右クリックしたときに持ってたアイテム
+     * @return アクションの結果?
+     */
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand){
 

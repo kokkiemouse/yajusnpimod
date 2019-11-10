@@ -8,11 +8,23 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
+
+/**
+ *デバッグ💛用
+ */
 public class yajuItem extends Item {
 
     public yajuItem(Settings group) {
         super(group);
     }
+
+    /**
+     *野獣アイテムを右クリックした時呼ばれる奴
+     * @param world クリックしたワールド
+     * @param playerEntity クリックしたプレーヤー
+     * @param hand クリックした時持っていたアイテム
+     * @return Actionの結果
+     */
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand){
 
