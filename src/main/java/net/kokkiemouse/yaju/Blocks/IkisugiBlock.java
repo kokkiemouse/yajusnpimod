@@ -72,15 +72,15 @@ public class IkisugiBlock extends FacingBlock implements Scheduleable {
         /**
          *デフォルトの方角を指定
          */
-        this.setDefaultState((BlockState)this.stateFactory.getDefaultState().with(FACING, Direction.NORTH));
+        this.setDefaultState((BlockState)this.getDefaultState().with(FACING, Direction.NORTH));
         /**
          *デフォルトのPowerを設定
          */
-        this.setDefaultState((BlockState)this.stateFactory.getDefaultState().with(POWERED, false));
+        this.setDefaultState((BlockState)this.getDefaultState().with(POWERED, false));
         /**
          *デフォルトのmodeを設定
          */
-        this.setDefaultState((BlockState)this.stateFactory.getDefaultState().with(MODE, 1));
+        this.setDefaultState((BlockState)this.getDefaultState().with(MODE, 1));
         /**
          *野獣Blockが正常に認識されているかのCheck用
          */

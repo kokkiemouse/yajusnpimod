@@ -25,7 +25,6 @@
       "net.kokkiemouse.yaju.init.YajuModClient"
     ]
   },
-
   "depends": {
     "fabricloader": ">=0.4.0",
     "fabric": "*"

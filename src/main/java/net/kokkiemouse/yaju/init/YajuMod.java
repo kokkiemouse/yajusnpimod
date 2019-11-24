@@ -4,7 +4,6 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.entity.FabricEntityTypeBuilder;
-import net.fabricmc.fabric.impl.entity.FabricEntityType;
 import net.kokkiemouse.yaju.Blocks.IkisugiBlock;
 import net.kokkiemouse.yaju.Blocks.OmaruBlock;
 import net.kokkiemouse.yaju.Items.UnkoItem;

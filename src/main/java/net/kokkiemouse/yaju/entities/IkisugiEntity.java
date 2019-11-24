@@ -110,7 +110,7 @@ public class IkisugiEntity extends Entity {
         float float_1 = 4.0F;
         world.playSound((PlayerEntity)null, this.getX(),this.getY(),this.getZ(), YajuMod.NAA_TSOUND_EVENT, SoundCategory.BLOCKS, 1f, 1f);
 
-        this.world.createExplosion(this, this.getX(), this.method_23323(0.0625D), this.getZ(), 4.0F, Explosion.DestructionType.BREAK);
+        this.world.createExplosion(this, this.getX(), this.getBodyY(0.0625D), this.getZ(), 4.0F, Explosion.DestructionType.BREAK);
     }
 
     protected void writeCustomDataToTag(CompoundTag compoundTag_1) {
