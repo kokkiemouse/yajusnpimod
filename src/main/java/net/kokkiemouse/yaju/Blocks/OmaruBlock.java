@@ -21,7 +21,7 @@ public class OmaruBlock extends Block {
     /**
      *レンダータイプ指定!
      * @param blockState_1 ブロック状態?
-     * @return
+     * @return ..
      */
     @Environment(EnvType.CLIENT)
     public BlockRenderType getRenderType(BlockState blockState_1) {
