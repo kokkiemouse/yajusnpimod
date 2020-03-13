@@ -202,7 +202,7 @@ public class IkisugiBlock extends FacingBlock implements Scheduleable {
 */
             CompoundTag scheduleData = new CompoundTag();
             primeTnt(world_1, blockPos_1, playerEntity_1);
-            scheduleData.putUuid("player", playerEntity_1.getUuid());
+            scheduleData.putUuidNew("player", playerEntity_1.getUuid());
             //world_1.setBlockState(blockPos_1, Blocks.AIR.getDefaultState(), 11);
 
             cancellationToken=Scheduler.Builder(this, world_1)
@@ -281,7 +281,7 @@ public class IkisugiBlock extends FacingBlock implements Scheduleable {
     public void onScheduleEnd(World world, BlockPos blockPos, int scheduleId, CompoundTag additionalData) {
         switch(scheduleId) {
             case TICKUPDATE_BOMB:
-                PlayerEntity player = world.getPlayerByUuid(additionalData.getUuid("player"));
+                PlayerEntity player = world.getPlayerByUuid(additionalData.getUuidNew("player"));
                 world.playSound(player, blockPos, YajuMod.NAA_TSOUND_EVENT, SoundCategory.BLOCKS, 1f, 1f);
                 System.out.println("X amount of ticks have passed!");
                 //world.setBlockState(blockPos, Blocks.AIR.getDefaultState(), 11);

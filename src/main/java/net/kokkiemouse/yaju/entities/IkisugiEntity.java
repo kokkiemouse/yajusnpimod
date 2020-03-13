@@ -6,7 +6,6 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.kokkiemouse.yaju.init.YajuMod;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.network.packet.EntitySpawnS2CPacket;
 import net.minecraft.entity.*;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
@@ -14,6 +13,7 @@ import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Packet;
+import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.BlockPos;
@@ -54,18 +54,16 @@ public class IkisugiEntity extends Entity {
     }
 
 
-    public IkisugiEntity(World world_1, double double_1, double double_2, double double_3, @Nullable LivingEntity livingEntity_1) {
-        this(YajuMod.ikisugiTnt, world_1);
-        this.setPosition(double_1, double_2, double_3);
-        double double_4 = world_1.random.nextDouble() * 6.2831854820251465D;
-        this.setVelocity(-Math.sin(double_4) * 0.02D, 0.20000000298023224D, -Math.cos(double_4) * 0.02D);
-        this.setFuse(73);
-        this.prevX = double_1;
-        this.prevY = double_2;
-        this.prevZ = double_3;
-        this.causingEntity = livingEntity_1;
-        this.setNoGravity(true);
-
+    public IkisugiEntity(World world, double d, double e, double f, @Nullable LivingEntity livingEntity) {
+        this(YajuMod.ikisugiTnt, world);
+        this.updatePosition(d, e, f);
+        double g = world.random.nextDouble() * 6.2831854820251465D;
+        this.setVelocity(-Math.sin(g) * 0.02D, 0.20000000298023224D, -Math.cos(g) * 0.02D);
+        this.setFuse(80);
+        this.prevX = d;
+        this.prevY = e;
+        this.prevZ = f;
+        this.causingEntity = livingEntity;
     }
 
 
@@ -100,9 +98,9 @@ public class IkisugiEntity extends Entity {
                 this.explode();
             }
         } else {
-            this.checkWaterState();
-            this.world.addParticle(ParticleTypes.SMOKE, this.getX(), this.getY() + 0.5D, this.getZ(), 0.0D, 0.0D, 0.0D);
-        }
+            this.updateWaterState();            if (this.world.isClient) {
+                this.world.addParticle(ParticleTypes.SMOKE, this.getX(), this.getY() + 0.5D, this.getZ(), 0.0D, 0.0D, 0.0D);
+            }}
 
     }
 
@@ -153,7 +151,6 @@ public class IkisugiEntity extends Entity {
     public Packet<?> createSpawnPacket() {
         return new EntitySpawnS2CPacket(this);
     }
-
     static {
         FUSE = DataTracker.registerData(TntEntity.class, TrackedDataHandlerRegistry.INTEGER);
     }
